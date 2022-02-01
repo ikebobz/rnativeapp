@@ -2,10 +2,11 @@
 
 
 const workmgt = (state = [],action) => {
+  // debugger;
   switch(action.type)
   {
     case 'ACTION_ADDWORK':
-        [...state,{
+        return [...state,{
             employeeid: action.payload.employeeid,
             productid: action.payload.productid,
             quantity: action.payload.quantity

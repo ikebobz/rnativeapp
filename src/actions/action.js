@@ -3,6 +3,6 @@ export const addItem = (item) => ({
     payload:{
         employeeid:item.eid,
         productid:item.pid,
-        quatity:item.quantity
+        quantity:item.quantity
     }
 })

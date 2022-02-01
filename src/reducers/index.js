@@ -3,5 +3,5 @@ import workmgt from './reduce'
 
 
 export default combineReducers({
-    'workmgt':workmgt
+    workmgt:workmgt
 })
