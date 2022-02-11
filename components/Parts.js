@@ -1,5 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-web';
+
 
 export function PartA()
 {
@@ -22,4 +24,13 @@ export class PartD extends React.Component{
             </View>
         )
     }
+}
+export function Counter(){
+    const [count, setCount] = useState(1);
+    return (
+        <View>
+            <Text>{count}</Text>
+            <TouchableOpacity onPress = {() => setCount(count + 2)}>Increment By 2</TouchableOpacity>
+        </View>
+    )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { addItem } from '../src/actions/action'
 import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image } from 'react-native-web';
 
 class AddItem extends React.Component
 {
@@ -19,7 +20,9 @@ class AddItem extends React.Component
     {
         return(
             <View style = {style.view}>
-                <View style = {style.top}/>
+                <View style = {style.top}>
+                    <Image style = {style.thumbnail} source = {require('../src/assets/images/maxibu.jpg')}/>
+                </View>
                 <View style = {style.middle}>
                 <TextInput style = {style.textbox} placeholder = 'EmployeeID' onChangeText = {(text) => this.setState({eid:text})}></TextInput>
                 <TextInput style = {style.textbox} placeholder = 'ProductID' onChangeText = {(text) => this.setState({pid:text})}></TextInput>
@@ -35,7 +38,7 @@ class AddItem extends React.Component
                     this.props.dispatch(action);
                     this.clearState();
                      }}><Text>Add Work Item</Text></TouchableOpacity>
-                <TouchableOpacity style = {{marginTop:30,backgroundColor:'#ccf',width:200,marginBottom:15}} onPress = {() => this.props.navigation.navigate("ViewItem")}><Text>View Items</Text></TouchableOpacity>
+                <TouchableOpacity style = {{marginTop:30,backgroundColor:'#cde',width:200,marginBottom:15}} onPress = {() => this.props.navigation.navigate("ViewItem")}><Text>View Items</Text></TouchableOpacity>
                 </View>
                 <View style = {style.bottom}/>
             </View>
@@ -55,16 +58,20 @@ const style = StyleSheet.create({
         marginTop:30
     },
     top:{
-        flex:1,
-        backgroundColor:'#eeb'
+        flex:1
+        
     },
     middle: {
-        flex:3,
-        backgroundColor:'#acc'
+        flex:3
+        
     },
     bottom: {
-        flex:1,
-        backgroundColor:'#ecd'
+        flex:1
+        
+    },
+    thumbnail:{
+        height:55,
+        width:94
     }
 
 });

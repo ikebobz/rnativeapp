@@ -22,8 +22,8 @@ import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'rea
 const style = StyleSheet.create({
     mainView:{
         flex:1,
-        flexDirection:'column',
-        backgroundColor:'#55f'
+        flexDirection:'column'
+        
     }
 })
 

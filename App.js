@@ -1,7 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { PartA, PartB, PartC } from './components/Parts'
+import { Counter } from './components/Parts'
 import AddItem from './components/AddItem'
 import { createStore } from 'redux';
 //import { Provider } from 'react';
@@ -10,9 +10,14 @@ import { Provider } from 'react-redux';
 import ViewItem from './components/ViewItem'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { saveState, loadState } from './src/FileManagement'
 
+const storedState = loadState()
+const store = createStore(reducers,storedState)
 
-const store = createStore(reducers)
+store.subscribe(() => saveState({
+  workmgt:store.getState().workmgt
+}))
 
 const Stack = createStackNavigator()
 
